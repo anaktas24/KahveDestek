@@ -122,4 +122,12 @@ a.active hr{
     font-weight: 900;
     font-style: italic;
   }
+
+  @media (max-width:640px) {
+    a.active{
+      background-color: black;
+      color: aliceblue;
+    }
+    
+  }
   
