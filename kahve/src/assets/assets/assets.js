@@ -1,6 +1,7 @@
 
 
 import logo from './logo.png'
+import logoo from './logoo.png'
 import hero_img from './hero_img.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
@@ -19,8 +20,12 @@ import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
+
+import p_img1 from './p_img1.png'
+
 export const assets = {
     logo,
+    logoo,
     hero_img,
     cart_icon,
     dropdown_icon,
@@ -37,19 +42,21 @@ export const assets = {
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    p_img1
 }
 
-/*export const products = [
+export const products = [
     {
         _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        name: "Coffee Machine Type",
+        description: "Italian coffee machine for perfect epsresso every minute",
         price: 100,
         image: [p_img1],
-        category: "Women",
-        subCategory: "Topwear",
+        category: "Machine",
+        subCategory: "Coffee",
         sizes: ["S", "M", "L"],
         date: 1716634345448,
         bestseller: true
-    },*/
+    }
+]
