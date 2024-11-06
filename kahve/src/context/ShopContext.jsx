@@ -1,6 +1,7 @@
 
 import {createContext, useState} from 'react';
 import { products } from '../assets/assets/assets'
+import { useNavigate } from 'react-router-dom';
 
 export const ShopContext = createContext()
 
@@ -12,6 +13,7 @@ const ShopContextProvider =(props) =>{
     const [search,setSearch] = useState('')
     const [showSearch,setShowSearch] = useState(false)
     const [cartItems,setCartItems] =useState({})
+    const navigate = useNavigate()
 
 
     const addToCart = async (itemId)=>{
@@ -48,8 +50,30 @@ const ShopContextProvider =(props) =>{
         let cartData = structuredClone(cartItems)
         cartData[itemId] = quantity
         setCartItems(cartData)
-    }
-    const value ={ products, currency, delivery_fee, search,setSearch,showSearch,setShowSearch,cartItems,addToCart,getCartCount,updateQuantity}
+    };
+
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for (const itemId in cartItems) {
+            let itemInfo = products.find((product) => product._id === itemId);
+            if (itemInfo) {  // Ensure item exists in products
+                try {
+                    if (cartItems[itemId] > 0) {
+                        totalAmount += itemInfo.price * cartItems[itemId];
+                    }
+                } catch (error) {
+                    console.error("Error calculating item amount:", error);
+                }
+            }
+        }
+        return totalAmount;
+    };
+
+
+
+
+
+    const value ={ products, currency, delivery_fee, search,setSearch,showSearch,setShowSearch,cartItems,addToCart,getCartCount,updateQuantity,navigate,getCartAmount}
 
 
     return(
@@ -59,4 +83,4 @@ const ShopContextProvider =(props) =>{
     )
 }
 
-export default ShopContextProvider  
+export default ShopContextProvider
