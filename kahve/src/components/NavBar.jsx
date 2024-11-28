@@ -22,10 +22,38 @@ const NavBar = () => {
                 <p>HOME</p>
                 <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
             </NavLink>
-            <NavLink to="/collection" className='flex flex-col items-center gap-1'>
+
+
+            <div className="group relative">
+                <NavLink to="/services" className='flex flex-col items-center gap-1'>
+                    <p>SERVICES</p>
+                    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
+                </NavLink>
+                    {/*-------- Dropdown Menu Services ----------*/}
+                <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+                    <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-500 rounded shadow-md">
+                        <Link to="/services#barista-training" className="cursor-pointer hover:text-black">
+                            Barista Training
+                        </Link>
+                        <Link to="/services#consulting" className="cursor-pointer hover:text-black">
+                            Consulting
+                        </Link>
+                        <Link to="/services#technic-support" className="cursor-pointer hover:text-black">
+                            Technic Support
+                        </Link>
+                        <Link to="/services#branding" className="cursor-pointer hover:text-black">
+                            Branding
+                        </Link>
+                        <Link to="/services#shop-design" className="cursor-pointer hover:text-black">
+                            Shop Design
+                        </Link>
+                    </div>
+                </div>
+             </div>
+            {/*<NavLink to="/collection" className='flex flex-col items-center gap-1'>
                 <p>COLLECTION</p>
                 <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-            </NavLink>
+            </NavLink>*/}
             <NavLink to="/about" className='flex flex-col items-center gap-1'>
                 <p>ABOUT US</p>
                 <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
@@ -50,7 +78,7 @@ const NavBar = () => {
             <div className='group relative'>
                 <Link to='/login'><img src={assets.profile_icon} className='w-5 cursor-pointer' alt="" /></Link>
                 <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-                    <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-white text-gray-500 rounded">
+                    <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-500 rounded">
                         <p className="cursor-pointer hover:text-black">My Profile</p>
                         <p className="cursor-pointer hover:text-black">Orders</p>
                         <p className="cursor-pointer hover:text-black">Logout</p>
@@ -72,9 +100,12 @@ const NavBar = () => {
                     <p>Back</p>
                 </div>
                 <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/'>HOME</NavLink>
-                <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/collection'>COLLECTION</NavLink>
+                <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/services'>SERVICES</NavLink>
+                {/*<NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/collection'>COLLECTION</NavLink>*/}
                 <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/about'>ABOUT</NavLink>
                 <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/contact'>CONTACT</NavLink>
+                <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/projects'>PROJECTS</NavLink>
+                <NavLink onClick={()=>isVisible(false)} className='py-2 pl-6 border'to='/store'>STORE</NavLink>
             </div>
         </div>
     </div>

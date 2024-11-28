@@ -10,6 +10,7 @@ import PlaceOrder from "./pages/PlaceOrder"
 import Projects from "./pages/Projects"
 import Store from "./pages/Store"
 import Orders from "./pages/Orders"
+import Services from "./pages/Services"
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import SearchBar from "./components/SearchBar"
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/collection" element={<Collection/>}/>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/store" element={<Store/>}/>
+        <Route path="/services" element={<Services/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/place-order" element={<PlaceOrder/>}/>
